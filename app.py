@@ -22,11 +22,11 @@ def get_zodiac_sign(dob):
             return sign
 
 def days_to_birthday(dob):
-    today = date.today()
-    dob = datetime.strptime(dob, "%Y-%m-%d").date()
-    next_birthday = date(today.year, dob.month, dob.day)
+    today = datetime.today()
+    dob = datetime.strptime(dob, "%Y-%m-%d")
+    next_birthday = datetime(today.year, dob.month, dob.day)
     if next_birthday < today:
-        next_birthday = date(today.year + 1, dob.month, dob.day)
+        next_birthday = datetime(today.year + 1, dob.month, dob.day)
     return (next_birthday - today).days
 
 
