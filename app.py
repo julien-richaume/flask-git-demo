@@ -37,6 +37,7 @@ def index():
         dob = request.form['dob']
         age = calculate_age(dob)
         zodiac = get_zodiac_sign(dob)
+        days_to_bday = days_to_birthday(dob)
         message = f"Hello, {name}! Your age is {age} and your zodiac sign is {zodiac}. There are {days_to_bday} days until your next birthday!"
         return render_template('result.html', message=message)
     return render_template('index.html')
