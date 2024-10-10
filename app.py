@@ -29,6 +29,7 @@ def days_to_birthday(dob):
         next_birthday = date(today.year + 1, dob.month, dob.day)
     return (next_birthday - today).days
 
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
